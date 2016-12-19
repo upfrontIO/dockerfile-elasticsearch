@@ -8,7 +8,7 @@ env:
   - NAME=elasticsearch TAGS="livingdocs/elasticsearch:latest livingdocs/elasticsearch:1 livingdocs/elasticsearch:1.7 livingdocs/elasticsearch:1.7.5"
 
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 
 script:
   - docker build -t $NAME .
