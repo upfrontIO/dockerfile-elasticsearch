@@ -23,8 +23,7 @@ fi
 
 if [ "$1" = 'elasticsearch' ]; then
 	echo -e '\nStarting elasticsearch...'
-	chown -R elasticsearch "/usr/share/elasticsearch" && sync
-	exec gosu elasticsearch "$@"
+	exec elasticsearch "$@"
 fi
 
 exec "$@"
