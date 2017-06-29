@@ -11,7 +11,8 @@ script:
   - docker build -t $NAME .
 
 after_success:
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+  - |
+    if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
       docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
       for tag in $TAGS; do
         docker tag $NAME $tag;
