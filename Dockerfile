@@ -1,5 +1,5 @@
 FROM alpine:3.4
-ENV ELASTICSEARCH_VERSION 1.7.5
+ENV ELASTICSEARCH_VERSION 2.4.5
 ENV PATH $PATH:/usr/share/elasticsearch/bin
 
 COPY fix-permissions /usr/libexec/fix-permissions
@@ -21,7 +21,7 @@ RUN \
   java -version 2>&1 && \
 
   echo ELASTICSEARCH VERSION: && \
-  elasticsearch -v && \
+  elasticsearch --version && \
 
   # cleanup
   rm -rf /var/cache/apk/*

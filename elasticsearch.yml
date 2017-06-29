@@ -15,4 +15,4 @@ path:
 node:
   name: ${HOSTNAME}
 
-script.disable_dynamic: false
+script.inline: on

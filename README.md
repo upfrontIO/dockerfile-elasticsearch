@@ -1,6 +1,6 @@
 # Elasticsearch
 
-The elasticsearch setup we at Livingdocs currently use in development
+The Elasticsearch setup we at Livingdocs currently use in development
 
 
 ## Create a container and give it a name
