@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -eu
 
 # Deployment recommendations: http://www.elastic.co/guide/en/elasticsearch/guide/current/deploy.html
 echo Checking elasticsearch setup...
@@ -22,7 +22,7 @@ else
 fi
 
 if [ "$1" = 'elasticsearch' ]; then
-	echo -e '\nStarting elasticsearch...'
+  echo -e '\nStarting elasticsearch...'
 fi
 
 exec "$@"

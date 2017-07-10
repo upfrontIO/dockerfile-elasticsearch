@@ -1,4 +1,6 @@
 #!/bin/sh
+set -u
+
 # Fix permissions on the given directory to allow group read/write of
 # regular files and execute of directories.
 chown -R elasticsearch "$1"
