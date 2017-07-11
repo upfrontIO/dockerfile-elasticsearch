@@ -21,6 +21,9 @@ else
   echo "you have more than 64k allowed file descriptors. awesome"
 fi
 
+multi__allow_explicit_index=${multi__allow_explicit_index:-false}
+echo "rest.action.multi.allow_explicit_index: $multi__allow_explicit_index" >> /usr/share/elasticsearch/config/elasticsearch.yml
+
 if [ "$1" = 'elasticsearch' ]; then
   echo -e '\nStarting elasticsearch...'
 fi
