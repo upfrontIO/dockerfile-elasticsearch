@@ -17,5 +17,9 @@ node:
 
 # https://www.elastic.co/guide/en/elasticsearch/reference/2.4/modules-scripting.html#enable-dynamic-scripting
 script.inline: true
+
 # https://www.elastic.co/guide/en/elasticsearch/reference/2.4/docs-index_.html#index-creation
 action.auto_create_index: false
+
+# https://www.elastic.co/guide/en/elasticsearch/reference/2.4/url-access-control.html
+rest.action.multi.allow_explicit_index: ${multi__allow_explicit_index}

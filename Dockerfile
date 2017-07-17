@@ -1,6 +1,7 @@
 FROM alpine:3.4
 ENV ELASTICSEARCH_VERSION 2.4.5
 ENV PATH $PATH:/usr/share/elasticsearch/bin
+ENV multi__allow_explicit_index=false
 
 COPY fix-permissions /usr/libexec/fix-permissions
 
@@ -17,19 +18,19 @@ RUN \
   /usr/libexec/fix-permissions /usr/share/elasticsearch && \
 
   # verify
-  echo JAVA VERSION: && \
+  echo 'JAVA VERSION:' && \
   java -version 2>&1 && \
 
-  echo ELASTICSEARCH VERSION: && \
+  echo 'ELASTICSEARCH VERSION:' && \
   elasticsearch --version && \
 
   # cleanup
   rm -rf /var/cache/apk/*
 
+COPY start.sh /start.sh
 COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
 VOLUME ["/usr/share/elasticsearch/data", "/usr/share/elasticsearch/logs"]
 
-COPY start.sh /start.sh
 EXPOSE 9200 9300
 
 USER elasticsearch
