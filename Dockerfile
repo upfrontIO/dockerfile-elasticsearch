@@ -1,7 +1,7 @@
 FROM alpine:3.4
 ENV ELASTICSEARCH_VERSION 2.4.5
 ENV PATH $PATH:/usr/share/elasticsearch/bin
-ENV multi__allow_explicit_index=false
+ENV multi__allow_explicit_index=true
 
 COPY fix-permissions /usr/libexec/fix-permissions
 
